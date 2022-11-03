@@ -1,18 +1,15 @@
-<div id="<%= dom_id blog %>">
-  <% if blog.id.present? %>
-  <p>
-    <strong>Ide:</strong>
-    <%= blog.id %>
-  </p>
-  <% end %>
-  <p>
-    <strong>Text:</strong>
-    <%= blog.text %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-     
-  </p> 
-
+<div class="card">
+  <div class="card__content">
+    <div>
+      <p class="card__title"><%= blog.title %></p>
+      <p class="card__date"><%= blog.human_readable_date %></p>
+    </div>
+    <p class="card__text"><%= blog.text %></p>
+    <div>
+      <p class="card__date">
+        <span class="edit-delete-link">(<%= link_to "Edit", edit_blog_path(blog) %> | <%= link_to "Delete",
+        delete_blog_path(blog) %>)</span>
+      </p>
+    </div>
+  </div>
 </div>

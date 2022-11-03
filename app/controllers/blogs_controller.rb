@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.reverse
   end
 
   # GET /blogs/1 or /blogs/1.json
@@ -38,7 +38,7 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1 or /blogs/1.json
   def update
     respond_to do |format|
-      if @blog.update(blog_params)
+      if @blog.update_attributes(blog_params)
         format.html { redirect_to blog_url(@blog), notice: "Blog was successfully updated." }
         format.json { render :show, status: :ok, location: @blog }
       else
@@ -49,7 +49,8 @@ class BlogsController < ApplicationController
   end
 
   # DELETE /blogs/1 or /blogs/1.json
-  def destroy
+  def delete
+    @blog = Blog.find(params[:id])
     @blog.destroy
 
     respond_to do |format|
