@@ -1,6 +1,7 @@
 # README
 
 ## Install
+Before proceeding, you must make sure you have mysql installed on your system. Ruby is also indispensable, but this step will be taken later in the section "Check your Ruby version".
 
 ### Clone the repository
 
@@ -15,7 +16,7 @@ cd jebzel_test
 ruby -v
 ```
 
-The ouput should start with something like `ruby 2.7.4`
+The output should start with something like `ruby 2.7.4`
 
 If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
