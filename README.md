@@ -33,7 +33,9 @@ bundle i
 
 ### Set environment variables
 
-Edit the file config/database.yml with the user and password of you local mysql server.
+- Go to [direnv](https://direnv.net/) and follow the installation instructions according to your operating system.
+- Create a `.envrc` file, copying the contents of [.envrc.sample](https://github.com/Jebzel/jebzel_test/blob/master/.envrc.sample) and filling out variables as needed.
+- Use the command `direnv allow` after updating variables.
 
 ### Initialize the database
 
